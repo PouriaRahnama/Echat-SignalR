@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
-using System.Threading.Tasks;
 using Echat.Domain.Context;
 using Echat.Domain.Entities;
 
@@ -13,7 +8,6 @@ namespace Echat.Application.Services
 {
     public abstract class BaseService
     {
-        private readonly ConcurrentDictionary<string, object> _entitySets = new ConcurrentDictionary<string, object>();
 
         protected EchatContext _context { get; private set; }
 
@@ -147,7 +141,7 @@ namespace Echat.Application.Services
         protected virtual DbSet<T> Entities<T>()
             where T : BaseEntity
         {
-            return _entitySets.GetOrAdd(typeof(T).FullName, (key) => { return _context.Set<T>(); }) as DbSet<T>;
+             return _context.Set<T>();
         }
 
 
