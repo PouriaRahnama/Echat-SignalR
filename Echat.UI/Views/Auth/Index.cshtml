@@ -1,0 +1,13 @@
+﻿@using Echat.Application.ViewModels.Auth
+
+<div id="login" class="auth">
+    <partial name="auth/_Login" model="new LoginViewModel()" />
+</div>
+<div id="register" class="auth" style="display: none;">
+    <partial name="auth/_Register" model="new RegisterViewModel()" />
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

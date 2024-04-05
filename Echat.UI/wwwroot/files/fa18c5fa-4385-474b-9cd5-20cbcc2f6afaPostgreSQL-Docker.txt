@@ -1,0 +1,12 @@
+﻿PostgreSQL: docker run -d -e POSTGRES_USER=user -e POSTGRES_PASSWORD=123 --name PostgreSQL -p 5432:5432  --restart=always postgres .
+
+pgadmin:  docker run --name   my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=pouria.rahnama78@gmail.com' -e 'PGADMIN_DEFAULT_PASSWORD=123' -d dpage/pgadmin4
+
+
+"ConnectionStrings": {
+    "Ef_Postgres_Db": "Server=localhost;Database=shopingpostgres;Port=5432;User Id=user;Password=123;"
+  },
+
+
+
+  setting server:          host : host.docker.internal  ,,   port:5432   ,,,  username: user    ,,   password: 123

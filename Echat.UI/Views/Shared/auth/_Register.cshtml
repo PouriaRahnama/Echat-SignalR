@@ -1,0 +1,13 @@
+﻿@model Echat.Application.ViewModels.Auth.RegisterViewModel
+<form method="post" asp-controller="Auth" asp-action="Register">
+    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+    <h1 class="text-center">ثبت نام</h1>
+    <label>نام کاربری : </label>
+    <input asp-for="UserName" type="text" id="registerUserName" class="form-control"/>
+    <label class="mt-3">کلمه عبور : </label>
+    <input asp-for="Password" type="password" class="form-control"/>
+    <label class="mt-3">تکرار کلمه عبور : </label>
+    <input asp-for="RePassword" type="password" id="registerPassword" class="form-control"/>
+    <button type="submit" class="btn btn-success mt-4 float-end" style="margin-right: 8px;">ثبت نام</button>
+    <button type="button" id="login-btn" class="btn btn-primary mt-4 ">ورود به حساب</button>
+</form>

@@ -1,0 +1,102 @@
+﻿
+
+@model List<Echat.Application.ViewModels.Chats.UserGroupViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .selected{
+        background-color:#cdcdcd
+    }
+</style>
+<div class="disConnect">
+    <div>
+        <p>اتصال شما به سرور قطع شده .</p>
+        <p>درحال برقراری ارتباط ...</p>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form class="modal-content" enctype="multipart/form-data" onsubmit="insertGroup(event)">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ایجاد گروه</h5>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="groupName" class="form-control" placeholder="نام گروه را وارد کنید" />
+                <input type="file" accept="image/*" name="image" class="form-control mt-2" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button type="submit" class="btn btn-success">ایجاد گروه</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8 chat-content">
+        <div class="header" style="display: none">
+            <img src="img/Default.jpg" />
+            <h2>علی</h2>
+        </div>
+        <div class="chats">
+        </div>
+        <div class="footer" style="display: none">
+            <a class="fileUpload">
+                <i class="fa fa-upload"></i>
+            </a>
+            <form onsubmit="sendMessage(event)">
+                <input id="messageText" type="text" class="form-control" placeholder="متن خود را وارد کنید">
+                <input type="file" class="form-control">
+                <button class="btn btn-success">
+                    ارسال
+                    <i class="fa fa-send"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="col-4 rooms">
+        <Ul>
+            <li>
+                <form>
+                    <input type="text" onkeyup="search()" placeholder="جستوجو کنید" id="search_input" class="form-control" />
+                    <i class="fa fas fa-search"></i>
+                </form>
+            </li>
+            <li id="search_result" style="cursor: none; padding: 0;display: none">
+                <ul>
+                </ul>
+
+            </li>
+            <li id="user_groups" style="cursor: none;padding: 0">
+                <ul>
+                    <li>
+                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success btn-block" style="width: 100%">
+                            <i class="fa fa-plus"></i>
+                            ایجاد گروه جدید
+                        </button>
+                    </li>
+                    @foreach (var item in Model)
+                    {
+                        <li id="@item.groupId" onclick="joinInGroup('@item.Token','@item.groupId')" >
+                            @item.GroupName
+                            <img src="/image/groups/@item.ImageName" />
+                            @if (item.LastChat != null)
+                            {
+                                var time = item.LastChat.CreateDate;
+                                <span>@time.Date @time.Minute : @time.Second</span>
+                            }
+                        </li>
+                    }
+                </ul>
+            </li>
+
+
+        </Ul>
+    </div>
+</div>
+@section Scripts
+{
+    <script src="/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="/js/signalRCustom.js"></script>
+
+}

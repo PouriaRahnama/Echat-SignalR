@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echat.Domain", "Echat.Domain\Echat.Domain.csproj", "{FD299DDE-EB40-446A-878C-CA241F367A5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echat.Application", "Echat.Application\Echat.Application.csproj", "{5CDBA9B7-2406-4466-A30D-17A39588D27D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echat.UI", "Echat.UI\Echat.UI.csproj", "{2719448C-7F2B-4F98-B6A8-B707BB375DB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD299DDE-EB40-446A-878C-CA241F367A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD299DDE-EB40-446A-878C-CA241F367A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD299DDE-EB40-446A-878C-CA241F367A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD299DDE-EB40-446A-878C-CA241F367A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CDBA9B7-2406-4466-A30D-17A39588D27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDBA9B7-2406-4466-A30D-17A39588D27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDBA9B7-2406-4466-A30D-17A39588D27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDBA9B7-2406-4466-A30D-17A39588D27D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2719448C-7F2B-4F98-B6A8-B707BB375DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2719448C-7F2B-4F98-B6A8-B707BB375DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2719448C-7F2B-4F98-B6A8-B707BB375DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2719448C-7F2B-4F98-B6A8-B707BB375DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {087947AB-94F0-439C-B8CB-D92BFAEBFA04}
+	EndGlobalSection
+EndGlobal
