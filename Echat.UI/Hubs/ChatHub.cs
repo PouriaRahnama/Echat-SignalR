@@ -2,9 +2,9 @@
 using Echat.Application.Services.Chats;
 using Echat.Application.Services.Chats.ChatGroups;
 using Echat.Application.Services.Users.UserGroups;
+using Echat.Application.Utilities;
 using Echat.Application.ViewModels.Chats;
 using Microsoft.AspNetCore.SignalR;
-using Echat.Application.Utilities;
 
 namespace Echat.UI.Hubs
 {

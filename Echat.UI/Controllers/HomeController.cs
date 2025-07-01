@@ -48,6 +48,7 @@ namespace Echat.UI.Controllers
                 await _chatHub.Clients.User(User.GetUserId().ToString()).SendAsync("NewGroup", "ERROR");
             }
         }
+
         [Authorize]
         [HttpPost]
         public async Task SendMessage([FromForm] InsertChatVIewModel model)
@@ -59,6 +60,7 @@ namespace Echat.UI.Controllers
             await _chatHub.Clients.Users(userIds).SendAsync("ReceiveNotification", result);
             await _chatHub.Clients.Group(model.GroupId.ToString()).SendAsync("ReceiveMessage", result);
         }
+
         [Authorize]
         public async Task<IActionResult> Search(string title)
         {
