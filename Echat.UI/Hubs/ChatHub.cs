@@ -69,7 +69,6 @@ namespace Echat.UI.Hubs
             await Groups.AddToGroupAsync(Context.ConnectionId, group.Id.ToString());
 
             var chats = await _chatService.GetChatGroup(group.Id);
-
             await Clients.Caller.SendAsync("JoinGroup", groupDto, chats);
         }
 

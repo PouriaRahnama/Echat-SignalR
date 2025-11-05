@@ -111,14 +111,23 @@ function search() {
 
 function sendNotification(chat) {
     if (Notification.permission === "granted") {
-        console.log(chat.groupId);
-        console.log(currentGroupId);
-        if (currentGroupId !== chat.groupId) {
-            var notification = new Notification(chat.userName + " " + `group: ${chat.groupName }`,
-                {
-                    body: chat.chatBody  
-                });
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    console.log(chat.groupId);
+                    console.log(currentGroupId);
+                    if (currentGroupId !== chat.groupId) {
+                        try {
+                            var notification = new Notification(chat.userName + ` group: ${chat.groupName}`, {
+                                body: chat.chatBody
+                            });
+                        } catch (error) {
+                            console.error("Notification error:", error);
+                        }
 
+                    }
+                }
+            });
         }
     }
 }
